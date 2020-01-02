@@ -17,6 +17,7 @@ module.exports = {
     'effect-fade',
     'effect-cube',
     'effect-flip',
+    'effect-flip2',
     'effect-coverflow',
     'thumbs',
   ],
