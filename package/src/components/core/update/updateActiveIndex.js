@@ -11,7 +11,13 @@ export default function (newActiveIndex) {
   if (typeof activeIndex === 'undefined') {
     for (let i = 0; i < slidesGrid.length; i += 1) {
       if (typeof slidesGrid[i + 1] !== 'undefined') {
-        if (translate >= slidesGrid[i] && translate < slidesGrid[i + 1] - ((slidesGrid[i + 1] - slidesGrid[i]) / 2)) {
+        if (swiper.params.effect === 'flip2') {
+          if (translate >= slidesGrid[i] + 10 && translate < slidesGrid[i + 1] + 10) {
+            activeIndex = i;
+          } else if (translate > slidesGrid[i] && translate < slidesGrid[i + 1] + 10) {
+            activeIndex = i + 1;
+          }
+        } else if (translate >= slidesGrid[i] && translate < slidesGrid[i + 1] - ((slidesGrid[i + 1] - slidesGrid[i]) / 2)) {
           activeIndex = i;
         } else if (translate >= slidesGrid[i] && translate < slidesGrid[i + 1]) {
           activeIndex = i + 1;
